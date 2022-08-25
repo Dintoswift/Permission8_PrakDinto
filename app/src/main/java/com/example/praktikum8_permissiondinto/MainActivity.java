@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         final List<String> permissionsList = new ArrayList<String>();
         if (!addPermission(permissionsList, Manifest.permission.ACCESS_FINE_LOCATION))
-            permissionsNeeded.add("GPS");
+            permissionsNeeded.add("Maps");
         if (!addPermission(permissionsList, Manifest.permission.READ_CONTACTS))
             permissionsNeeded.add("Read Contacts");
         if (!addPermission(permissionsList, Manifest.permission.WRITE_CONTACTS))
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         if (permissionsList.size() > 0) {
             if (permissionsNeeded.size() > 0) {
                 // Need Rationale
-                String message = "You need to grant access to " + permissionsNeeded.get(0);
+                String message = "Kamu Perlu Akses Perizinan " + permissionsNeeded.get(0);
                 for (int i = 1; i < permissionsNeeded.size(); i++)
                     message = message + ", " + permissionsNeeded.get(i);
                 showMessageOKCancel(message,
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                     insertDummyContact();
                 } else {
                     // Permission Denied
-                    Toast.makeText(MainActivity.this, "Some Permission is Denied", Toast.LENGTH_SHORT)
+                    Toast.makeText(MainActivity.this, "Izin Ditolak!!!", Toast.LENGTH_SHORT)
                             .show();
                 }
             }
